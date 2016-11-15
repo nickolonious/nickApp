@@ -1,0 +1,8 @@
+{
+  "firebase": "potstop",
+  "public": ".",
+  "ignore": [
+    "firebase.json"
+    
+  ]
+}

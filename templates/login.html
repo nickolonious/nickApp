@@ -1,0 +1,19 @@
+<div class="container">
+  <div ng-controller="authController">
+     <div class='title'>
+      <h2>Login</h2>
+     </div>
+     <div ng-controller="authController">
+      <h3>Email: </h3>
+      <input type="email" class="form-control" ng-model="email" required />
+      <h3>Password: </h3>
+      <input type="password" class="form-control" ng-model="password" required/>
+      <form>
+      <label for="myFName">First Name</label><input type="text" name="myFName" id="myFName" required="required">
+      </form>
+      <br />
+      <button class="btn btn-primary" ng-click="logIn()">Login</button>
+      <button class="btn btn-alternative" ng-click="cancel()">Cancel</button>      
+     </div>
+   </div>
+  </div>
