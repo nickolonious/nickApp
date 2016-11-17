@@ -1,0 +1,45 @@
+<div class="profileController">
+<div class="title">
+    <h2>{{userData.firstName}} {{userData.lastName}}</h2>
+</div>
+<div class="container">
+<fieldset>
+    <legend>{{userData.firstName}}'s Information</legend>
+    <div>
+        <img ng-if="authData" ng-src="{{authData.password.profileImageURL}}" alt="Description"/>
+        <br />
+        <br />   
+        <p>email: {{authData.password.email}}</p>
+       <legend></legend>    
+    </div>
+</fieldset>
+</div>
+<div class = "container">
+<fieldset>
+    <legend>Business Information</legend>
+    <div>
+        <p>Business Name: {{bizData.bizName}}</p>
+        <p>Address: {{bizData.bizAddress}}</p>
+        <p>Address 2: {{bizData.bizAddress2}}</p>
+        <p>City: {{bizData.bizCity}}</p>
+        <p>State: {{bizData.bizState}}</p>
+        <p>Zip: {{bizData.bizZip}}</p>    
+        <legend></legend>
+    </div>
+</fieldset>
+</div>
+
+<div class="container">
+<fieldset>
+    <legend>Dispensary Information</legend>
+    <div>
+        <p>State License #: {{medData.stateLicenseNumber}}</p>
+        <p>Federal Tax Id: {{medData.federalTaxId}}</p>
+        <p>Account Type: {{medData.AccountType}}</p>  
+        <p>State License #: {{medData.medSerialNum}}</p>
+        <p>Federal Tax Id: {{medData.federalTaxId}}</p>
+        <p>Account Type: {{medData.medName}}</p>  
+        <legend></legend>     
+    </div>
+</fieldset>
+</div>

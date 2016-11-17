@@ -1,0 +1,14 @@
+
+<div class="container">
+<div class='md-padding' layout="row" layout-wrap >
+    <md-card  ng-repeat="change in changes | orderBy:'-id'">
+      <md-card-content>
+        <h1>Version: {{change.version}}</h1>
+        <h2>{{change.title}}</h2>
+        <h3>{{change.description}}</h3>
+        <h3>{{change.dateTime}}</h3>
+      </md-card-content>
+    </md-card>
+</div>
+</div>
+

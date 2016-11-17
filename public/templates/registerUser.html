@@ -1,0 +1,18 @@
+<div class="title">
+    <h1>Register User Information</h1>
+</div>
+
+<div class="container">
+    <div ng-controller="registerUserController">
+        <legend>User Info </legend>
+        <h3>First Name: </h3>
+        <input type="text" class="form-control" ng-model="firstname" required />
+        <h3>Last Name: </h3>
+        <input type="text" class="form-control" ng-model="lastname" required/>
+        
+        <br />
+        <legend></legend>      
+        <button class="btn btn-primary" ng-click="addUserInfo()">step 2</button>
+        <button class="btn btn-alternate" ng-click="skipToProfile()">skip</button>
+    </div>      
+</div>
