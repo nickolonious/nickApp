@@ -11,7 +11,6 @@
     height: calc(100% - 64px);
 }
  
-
 /****Body****/
 #mainDiv {
     height: 100%;
@@ -22,7 +21,6 @@
     padding: 5px 0px 5px 20px;
     font-size: 24px;
     font-family: Arial;
-
 }
 
 #megaDiv {

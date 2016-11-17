@@ -3,7 +3,7 @@
 <h2>Change Log<h2>
 
 <h3>Version 0.0.3 - November 16, 2016</h3> 
-<p>Fixes to Sidenav, Addition of Changelog page</p>
+<p>Fixes to Sidenav, Addition of Changelog page, Deletion of Unecessary Templates, Controllers and Directives</p>
 
 <h3>Version 0.0.2 - November 13, 2016</h3> 
 <p>Nightly Build, First Deployment  Version</p>

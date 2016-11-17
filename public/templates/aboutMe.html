@@ -1,0 +1,31 @@
+<div class="title">
+    <h2>{{title}}</h2>
+</div>
+   
+   
+<div class="container">
+        <h1>Education</h1>
+
+<div class='md-padding' layout="row" layout-wrap >
+    <md-card  ng-repeat="edu in education | orderBy:'-id'">
+      <md-card-content>
+        <h3>{{edu.degree}}</h3>
+        <h3>{{edu.school}}</h3>
+        <h4>{{edu.type}}</h4>
+        <h4>{{edu.year}}</h4>
+      </md-card-content>
+    </md-card>
+</div>
+</div>
+
+<div class="container">
+        <h1>Skills</h1>
+<div class='md-padding' layout="row" layout-wrap >
+    <md-card style="width:100%;" ng-repeat="skill in skills">
+      <md-card-content>
+        <h2>{{skill.skill}}</h3>
+        <h3>Experience: {{skill.experience}}</h3>
+      </md-card-content>
+    </md-card>
+</div>
+</div>

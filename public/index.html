@@ -7,7 +7,9 @@
   <title>Nick Muscara</title>
   <meta name="description" content="Nick Muscara">
   
-  <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+
 
   <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
   <script>
@@ -48,21 +50,17 @@
   
   <!-- Controllers -->
   <script src="controllers/404Controller.js"></script>
+  <script src="controllers/aboutMeController.js"></script>
   <script src="controllers/authController.js"></script>
   <script src="controllers/contactController.js"></script>
   <script src="controllers/changeLogController.js"></script>
   <script src="controllers/homeController.js"></script>
   <script src="controllers/loadController.js"></script>
   <script src="controllers/navbarController.js"></script>
-  <script src="controllers/profileController.js"></script>
   <script src="controllers/wishlistController.js"></script>
-  <script src="controllers/workController.js"></script>
 
   <!-- Directives -->
   <script src="directives/alertDirective.js"></script>
-  <script src="directives/footerDirective.js"></script>
-  <script src="directives/modalDirective.js"></script>
-  <script src="directives/navbarDirective.js"></script>
  
   <!-- Factories -->
   <script src="factories/authFactory.js"></script>
@@ -77,35 +75,23 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
   <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
-
-
   <link rel="stylesheet" href="styles/customStyles.css">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-    <body ng-controller="loadController">    
+    <body ng-controller="loadController">          
       
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '557115191154410',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
       
+  <!-- Container #1 (see wireframe) -->
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
+               aria-label="Show User List">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+  </md-toolbar>
+    
       <div id="megaNavDiv" style="height:100%;" ng-controller="navbarController">
       <div style="height:100%;" ng-controller="navbarController" flex layout="row" ng-cloak>
         <md-sidenav style="height:100%;"
@@ -119,18 +105,11 @@
         </md-toolbar>
 
         <ul id="materialLinks" class="nav navbar-nav">
-          <!--<li><a ng-click="toggleLeft()"  href="#profile" ng-show="authData">{{authData.password.email}} </a></li>          
-          <li ><a href='#signup' ng-hide="authData"><i class="fa fa-caret-square-o-up"></i> Sign Up</a></li>
-          <li> <a href='#login' ng-hide="authData" ><i class="fa fa-sign-in"></i> Login</a></li> 
-          <li><a ng-click="toggleLeft()" ng-show="authData" href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a></li> -->
           <li><a ng-click="toggleLeft()" href="#home">Home <span class="sr-only">(current)</span></a></li>
-          <!--<li><a ng-click="toggleLeft()" ng-show="authData" href="#profile">About Me</a></li>-->
-          <li><a ng-click="toggleLeft()" href="#work">Work</a></li>
+          <li><a ng-click="toggleLeft()" href="#aboutMe">About Me</a></li>
           <li><a ng-click="toggleLeft()" href="#contact">Contact Me</a></li>
           <li><a ng-click="toggleLeft()" href="#wishlist">Wish List</a></li>
           <li><a ng-click="toggleLeft()" href="#changelog">Change Log</a></li>
-
-
           </ul>
         </md-sidenav>
 
@@ -144,6 +123,7 @@
         <div id="mainDiv"> 
             <div ng-view></div>
         </div>
+
     </md-content>
     </div>
 </div>

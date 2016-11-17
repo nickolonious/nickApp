@@ -52,7 +52,7 @@ nickApp.controller('wishlistController', function($scope){
         linkTitle: "Amazon"
 },
     {
-         id: 5,
+        id: 5,
         title: "Pain 100% Hot Sauce",
         price: "~$12.00",
         image: "pain100.png",
@@ -62,7 +62,7 @@ nickApp.controller('wishlistController', function($scope){
         linkTitle: "Amazon"
     },
      {
-         id: 6,
+        id: 6,
         title: "Android Figure",
         price: "~$19.99",
         image: "android.png",
@@ -72,7 +72,7 @@ nickApp.controller('wishlistController', function($scope){
         linkTitle: "Amazon"
     },
       {
-         id: 7,
+        id: 7,
         title: "Blair's Mega Death Sauce With Liquid Rage",
         price: "~$14.69",
         image: "blairs.png",
@@ -92,14 +92,14 @@ nickApp.controller('wishlistController', function($scope){
         linkTitle: "Amazon"
     },
        {
-         id: 9,
+        id: 9,
         title: "60W MagSafe power adapter with L style connector",
         price: "~$49.99",
         image: "magsafe.png",
         height: "96px",
         width: "96px",
-        link: "",
-        linkTitle: "Apple"
+        //link: "",
+        //linkTitle: "Apple"
     }
     
     
