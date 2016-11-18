@@ -20,8 +20,15 @@ nickApp.controller('changeLogController', function($scope){
         id: 2,
         version:"0.3",
         title: "Education & Skills Page / Throwing out some garabage",
-        description: "In an effort to fill my site with content before bed, I added information about my degree and skills I have been acquiring lately. By the end you should see the culmination of nearly all of them. This project is a Frankenstein's monster consisting of the Angular Material starter app, and an other app I had abandoned. The best part about failing in development is at least you have alot of code leftover and you know exactly how it works.",
+        description: "In an effort to fill my site with content before bed, I added information about my degree and skills I have been acquiring lately. Once this project is finished, you should see a combination of nearly all of them. This project is a Frankenstein's monster consisting of the Angular Material starter app, and an other app I had abandoned. The best part about failing in development is at least you have alot of code leftover and you know exactly how it works.",
         dateTime: "Wednesday Nov 16th 9:00pm" 
+    },
+    {
+        id: 3,
+        version:"0.4",
+        title:"Logos",
+        description:"I added logos to the about me page, makes the page easier to look at but not quite perfect in terms of the logos perfectly aligned and the same size. Will work on fixing that later.",
+        dateTime:"Thursday Nov 17th 10:15pm"
     }  
     ];
 });

@@ -7,7 +7,8 @@
         <h1>Education</h1>
 
 <div class='md-padding' layout="row" layout-wrap >
-    <md-card  ng-repeat="edu in education | orderBy:'-id'">
+    <md-card style="width:100%;" ng-repeat="edu in education | orderBy:'-id'">
+      <img style="float: right;" right; ng-src='{{edu.image}}' alt="{{edu.alt}}" title="{{edu.title}}"/>
       <md-card-content>
         <h3>{{edu.degree}}</h3>
         <h3>{{edu.school}}</h3>
@@ -22,6 +23,7 @@
         <h1>Skills</h1>
 <div class='md-padding' layout="row" layout-wrap >
     <md-card style="width:100%;" ng-repeat="skill in skills">
+        <img style="float: right;" right; ng-src='{{skill.image}}' alt="{{skill.alt}}" title="{{skill.title}}"/>
       <md-card-content>
         <h2>{{skill.skill}}</h3>
         <h3>Experience: {{skill.experience}}</h3>
