@@ -1,5 +1,15 @@
 nickApp.controller('wishlistController', function($scope){
-  $scope.wishlist = [
+  
+  var wishRef = firebase.database().ref().child('WishList');
+
+  wishRef.once('value', function(datasnap){
+        $scope.wishlist = datasnap.val();
+        console.log($scope.wishlist);
+        $scope.$apply();
+    });
+  
+  
+ /* $scope.wishlist = [
     {
         id: 0,
         title: "Knicks Pullover",
@@ -101,14 +111,5 @@ nickApp.controller('wishlistController', function($scope){
         //link: "",
         //linkTitle: "Apple"
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ]
+    ] */
 })

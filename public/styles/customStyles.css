@@ -1,77 +1,44 @@
-
-/* Testing Stuff */
-.content {
-    padding: 10px;
-}
-
 /* End Test */
 .full-heigth {
     height: -moz-calc(100% - 64px); 
     height: -webkit-calc(100% - 64px); 
     height: calc(100% - 64px);
 }
- 
 /****Body****/
+
 #mainDiv {
     height: 100%;
 }
-
 #materialLinks li {
     width: 100%;
     padding: 5px 0px 5px 20px;
     font-size: 24px;
     font-family: Arial;
 }
+#materialLinks li a {
+    color: black;
+}
+
 
 #megaDiv {
     height: 100%;
 }
-
-/****Navbar****/
-#mainSearch{
-    width:100%;
-    margin: 10px auto;
-}
-#companyColors{
-    background-color: #d1141e; 
-}
-#companyColors a {
-    color: black;
-}
-#companyColors a:visited {
-    color: black;
-}
-#companyColors a:hover {
-    color: black;
-    background-color:white;
-    
-}
-#burgerButton {
-    float: left;
-    padding-left: 5%;
-}
-#authDiv{
-    text-decoration: underline;  
-}
-#authDiv a {
-    color: black;    
-}
-#authDiv a:visited {
-    text-decoration:underline; 
-    color: black; 
-   
-}
-#authDiv a:hover {
-    text-decoration:underline;  
+.fulllWidthCard {
+    width: 100%;
 }
 
-  .horizontal-collapse {
-    height: 70px;
-  }
-  .navbar-collapse.in {
-    overflow-y: hidden;
-  }
+/*** Navigation Sidebar ***/
+.content {
+    padding: 15px;
+}
 
+#navDiv{
+    height:100%;
+    padding-bottom: 20px;
+}
+.sideNavImage {
+    padding-right: 10px;
+}
 /****Footer****/
 /* Sticky footer styles */
 html {
@@ -82,20 +49,9 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #d1141e;
-  color: black;
-}
-
 .title {
     text-align: center;
 }
-
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -109,6 +65,7 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+
 /* makes alerts float - needs work*/
 #alertContainer {
     position: fixed; 
@@ -116,42 +73,6 @@ body {
     right: 0; 
     left: 0; 
     width: 100%
-}
-/**** Fieldsets ****/
-#authRoute{
-    border: 1px solid black;
-    margin: 10px;
-    width: 300px;
-    border-radius: 4px;
-}
-#authRouteLegend{
-    background-color: black;
-    width: 250px;
-    border-radius: 5px;
-    color: white;
-}
-#authRouteInnerDiv{
-    margin: 10px;
-}
-.centered{
-    margin: 0 auto;
-}
-#signUpDiv{
-    background-color: black;
-    color:white;
-    border-radius: 4px;
-    width: 80%;   
-    margin: 0 auto;
-}
-#signUpFieldset{
-    margin: 0 auto;
-    color: white;
-    width: 80%; 
-    padding: 10px;
-}
-
-#signUpFieldset legend{
-    color: white;
 }
 
 /*** Modal Cancel Button ***/

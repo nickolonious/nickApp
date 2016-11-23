@@ -1,4 +1,14 @@
-nickApp.controller('changeLogController', function($scope){
+nickApp.controller('changeLogController', function($scope, $firebaseObject, $firebaseRef){
+ 
+
+
+ const rootRef = firebase.database().ref().child('angular');
+ const ref = rootRef.child('object');
+ this.object = $firebaseObject(ref);
+ this.sayHello
+ 
+ 
+ 
   $scope.changes = [
     {
         id: 0,
@@ -29,6 +39,13 @@ nickApp.controller('changeLogController', function($scope){
         title:"Logos",
         description:"I added logos to the about me page, makes the page easier to look at but not quite perfect in terms of the logos perfectly aligned and the same size. Will work on fixing that later.",
         dateTime:"Thursday Nov 17th 10:15pm"
+    },
+    {
+        id: 4,
+        version:"0.5",
+        title: "Nav Icons / Code Cleanup",
+        description: "There are now nav icons on the side nav, side nav font color changed from blue to black, deletion of unecessary code for smallest code possible",
+        dateTime:"Saturday Nov 19 7:52pm"
     }  
     ];
 });

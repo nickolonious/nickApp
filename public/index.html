@@ -9,8 +9,6 @@
   
   <link rel="icon" type="image/png" href="favicon.png" />
 
-
-
   <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
   <script>
    // Initialize Firebase
@@ -36,9 +34,12 @@
   <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
   <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
   
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+
   <!-- AngularFire -->
-  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script> 
+  <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
   <!-- jQuery -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
 
@@ -93,39 +94,62 @@
   </md-toolbar>
     
       <div id="megaNavDiv" style="height:100%;" ng-controller="navbarController">
-      <div style="height:100%;" ng-controller="navbarController" flex layout="row" ng-cloak>
-        <md-sidenav style="height:100%;"
-          class="md-sidenav-left"
-          md-component-id="left"
-          md-is-locked-open="$mdMedia('gt-md')"
-          md-whiteframe="4">
-          
-        <md-toolbar class="md-theme-indigo">
-          <h1 class="md-toolbar-tools">Nick Muscara</h1>          
-        </md-toolbar>
+        <div id="navDiv" ng-controller="navbarController" flex layout="row" ng-cloak>
+          <md-sidenav style="height:100%;"
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')"
+            md-whiteframe="4">
+            <md-toolbar class="md-theme-indigo">
+              <h1 class="md-toolbar-tools">Nick Muscara</h1>          
+            </md-toolbar>
 
-        <ul id="materialLinks" class="nav navbar-nav">
-          <li><a ng-click="toggleLeft()" href="#home">Home <span class="sr-only">(current)</span></a></li>
-          <li><a ng-click="toggleLeft()" href="#aboutMe">About Me</a></li>
-          <li><a ng-click="toggleLeft()" href="#contact">Contact Me</a></li>
-          <li><a ng-click="toggleLeft()" href="#wishlist">Wish List</a></li>
-          <li><a ng-click="toggleLeft()" href="#changelog">Change Log</a></li>
-          </ul>
-        </md-sidenav>
+            <ul id="materialLinks" class="nav navbar-nav">
+              <li>
+                <a ng-click="toggleLeft()" href="#home"><span class="sr-only">(current)</span>
+                   <img class="sideNavImage" src="icons/home.svg"> Home
+                </a>
+                </li>
+              <li>
+                <a ng-click="toggleLeft()" href="#aboutMe">
+                  <img class="sideNavImage"  src="icons/aboutMe.svg"> About Me
+                  </a>
+              </li>
+              <li>
+                <a style="padding-right: 20px;" ng-click="toggleLeft()" href="#contact">
+                <img class="sideNavImage" src="icons/contactMe.svg">Contact Me
+                </a>
+              </li>
+              <li>
+                <a ng-click="toggleLeft()" href="#wishlist">
+                  <img class="sideNavImage" src="icons/wishList.svg">Wish List
+                </a>
+              </li>
+              <li>
+                <a ng-click="toggleLeft()" href="#changelog">
+                  <img class="sideNavImage" src="icons/changeLog.svg">Change Log
+                </a>
+              </li>
+            </ul>
+          </md-sidenav>
 
-    <md-content class="fullheigth"flex layout-padding>
-        <div>
-          <md-button ng-click="toggleLeft()"
-            class="md-primary" hide-gt-md> Open Nav
-          </md-button>
+          <md-content class="fullheigth" flex layout-padding>
+            <div>
+              <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md> Open Nav
+              </md-button>
+            </div>
+
+            <div id="mainDiv"> 
+                <div ng-view></div>
+            </div>
+
+            <div id="object">
+
+            </div>
+
+
+          </md-content>
         </div>
-
-        <div id="mainDiv"> 
-            <div ng-view></div>
-        </div>
-
-    </md-content>
-    </div>
-</div>
+      </div>
     </body>
 </html>
