@@ -2,9 +2,10 @@ nickApp.controller('aboutMeController', ['$scope', '$firebaseObject', '$firebase
     function($scope, $firebaseObject, $firebaseArray){ 
     
     $scope.title='About Me';
-    
+
     var aboutMeRef = firebase.database().ref().child('Education');
     var skillsRef = firebase.database().ref().child('Skills');
+    var projectRef = firebase.database().ref().child('Projects');
 
     aboutMeRef.once('value', function(datasnap){
         $scope.education = datasnap.val();
@@ -13,8 +14,12 @@ nickApp.controller('aboutMeController', ['$scope', '$firebaseObject', '$firebase
 
     skillsRef.once('value', function(datasnap){
         $scope.skills = datasnap.val();
-        console.log($scope.skills);
         $scope.$apply();
     });
+
+    projectRef.once('value', function(datasnap){
+        $scope.project = datasnap.val();
+        $scope.$apply();
+    })
 
 }]);
