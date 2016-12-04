@@ -18,8 +18,8 @@ nickApp.controller('aboutMeController', ['$scope', '$firebaseObject', '$firebase
     });
 
     projectRef.once('value', function(datasnap){
-        $scope.project = datasnap.val();
+        $scope.projects = datasnap.val();
         $scope.$apply();
-    })
+    });
 
 }]);

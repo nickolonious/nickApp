@@ -4,9 +4,8 @@
    
    
 <div class="container">
-        <h1>Education</h1>
-
-<div class='md-padding' layout="row" layout-wrap >
+  <h1>Education</h1>
+  <div class='md-padding' layout="row" layout-wrap >
     <md-card style="width:100%;">
       <img style="float: right;" right; ng-src='{{education.image}}' alt="{{education.alt}}" title="{{education.title}}"/>
       <md-card-content>
@@ -16,12 +15,12 @@
         <h4>{{education.gradYear}}</h4>
       </md-card-content>
     </md-card>
-</div>
+  </div>
 </div>
 
 <div class="container">
-        <h1>Skills</h1>
-<div class='md-padding' layout="row" layout-wrap >
+  <h1>Skills</h1>
+  <div class='md-padding' layout="row" layout-wrap >
     <md-card style="width:100%;" ng-repeat="skill in skills">
         <img style="float: right;" right; ng-src='{{skill.image}}' alt="{{skill.alt}}" title="{{skill.title}}"/>
       <md-card-content>
@@ -29,5 +28,17 @@
         <h3>Experience: {{skill.duration}}</h3>
       </md-card-content>
     </md-card>
+  </div>
 </div>
+
+<div class="container">
+  <h1>Projects</h1>
+  <div class='md-padding' layout="row" layout-wrap>
+    <md-card style="width:100%;" ng-repeat="project in projects">
+      <md-card-content>
+        <h2>{{project.name}}</h3>
+        <h3>{{project.description}}</h3>
+      </md-card-content>
+    </md-card>
+  </div>
 </div>
