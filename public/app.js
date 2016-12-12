@@ -21,7 +21,6 @@
 			})	
 			.when('/login', {
 				templateUrl : 'templates/login.html',
-				controller  : 'authController'
 			})	
 			.when('/contact', {
 				templateUrl : 'templates/contact.html',
@@ -29,11 +28,15 @@
 			})	
 			.when('/signup', {
 				templateUrl : 'templates/signup.html',
-				controller  : 'authController'
 			})		
 			 .when('/wishlist', {
 				templateUrl: 'templates/wishlist.html',
 				controller: 'wishlistController'
+			})
+			.when('/signIn', {
+				templateUrl: 'templates/signIn.html',
+				controller: 'signInController'
+
 			})
 			.when('/404', {
 				templateUrl: 'templates/404.html',

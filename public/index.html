@@ -10,17 +10,6 @@
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
-  <script>
-   // Initialize Firebase
-   var config = {
-    apiKey: "AIzaSyDE2B3GTOGU_jJFoYKp0Ruc-RmOTheXO6g",
-    authDomain: "nickapp-359c9.firebaseapp.com",
-    databaseURL: "https://nickapp-359c9.firebaseio.com",
-    storageBucket: "nickapp-359c9.appspot.com",
-    messagingSenderId: "434217548999"
-   };
-   firebase.initializeApp(config);
-   </script>
 
   <!-- Scripts -->
   <!-- Angular -->
@@ -35,7 +24,6 @@
   <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
   
   <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
 
   <!-- AngularFire -->
   <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
@@ -58,6 +46,7 @@
   <script src="controllers/homeController.js"></script>
   <script src="controllers/loadController.js"></script>
   <script src="controllers/navbarController.js"></script>
+  <script src="controllers/signInController.js"></script>
   <script src="controllers/wishlistController.js"></script>
 
   <!-- Directives -->
@@ -84,6 +73,23 @@
 </head>
     <body ng-controller="loadController">          
       
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '557115191154410',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
       
   <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
@@ -104,6 +110,13 @@
               <h1 class="md-toolbar-tools">Nick Muscara</h1>          
             </md-toolbar>
             <ul id="materialLinks" class="nav navbar-nav">
+              <li>
+           
+
+                <a ng-click="toggleLeft()" href="#signIn"><span class="sr-only">(current)</span>
+                   <img class="sideNavImage" src="icons/accountCircle.svg"> Sign In
+                </a>
+              </li>
               <li>
                 <a ng-click="toggleLeft()" href="#home"><span class="sr-only">(current)</span>
                    <img class="sideNavImage" src="icons/home.svg"> Home
@@ -140,6 +153,8 @@
             <div id="mainDiv"> 
                 <div ng-view></div>
             </div>
+
+            
           </md-content>
         </div>
       </div>

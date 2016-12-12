@@ -1,0 +1,21 @@
+
+<div ng-controller="signInController" layout="column" ng-cloak class="md-inline-form">
+<div class="container">
+  <div class='md-padding' layout="row" layout-wrap >
+    <md-card style="width:100%;">
+      <img style="float: right;" right; ng-src='{{education.image}}' alt="{{education.alt}}" title="{{education.title}}"/>
+      <md-card-content>
+       <img style="display:block; margin-left:auto; margin-right:auto;" ng-src='{{user.image}}' height="64px" width="64px"/>
+       <h2>{{user.fullName}}</h2>
+       <h3>{{user.email}}</h3>
+      </md-card-content>
+    </md-card>
+  </div>
+   <md-button ng-click="fbSignIn()" class="md-primary">Facebook Sign In</md-button>
+   <md-button ng-click="fbSignOut()" class="md-primary">Facebook Sign Out</md-button>
+</div> 
+</div>
+
+
+
+   
