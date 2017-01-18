@@ -1,0 +1,10 @@
+
+<div style="margin-left: 10%;" class='md-padding' layout="row" layout-wrap>
+    <md-card style="width: 350px; float:left;" ng-animate="'animate'" ng-repeat="record in records">
+      <img ng-src="{{record.image}}" class="md-card-image" alt="{{record.album}}">
+      <md-card-content>
+        <h2>{{record.album}}</h2>
+        <p>{{record.artist}}</p>
+      </md-card-content>
+    </md-card>
+  </div>

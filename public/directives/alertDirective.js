@@ -7,7 +7,5 @@ nickApp.directive('bootstrapAlert',function(){
             options:"="
         },
         transclude:true,
-       
-
     };
 });

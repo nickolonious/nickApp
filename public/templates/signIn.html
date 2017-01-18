@@ -5,9 +5,9 @@
     <md-card style="width:100%;">
       <img style="float: right;" right; ng-src='{{education.image}}' alt="{{education.alt}}" title="{{education.title}}"/>
       <md-card-content>
-       <img style="display:block; margin-left:auto; margin-right:auto;" ng-src='{{user.image}}' height="64px" width="64px"/>
-       <h2>{{user.fullName}}</h2>
-       <h3>{{user.email}}</h3>
+       <img style="display:block; margin-left:auto; margin-right:auto;" ng-src='{{authData.photoURL}}' height="64px" width="64px"/>
+       <h2>{{authData.displayName}}</h2>
+       <h3>{{authData.email}}</h3>
       </md-card-content>
     </md-card>
   </div>

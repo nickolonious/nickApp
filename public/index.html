@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app="nickApp" lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,7 +8,8 @@
   <meta name="description" content="Nick Muscara">
   
   <link rel="icon" type="image/png" href="favicon.png" />
-
+  
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
 
   <!-- Scripts -->
@@ -23,8 +24,6 @@
   <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
   <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
   
-  <!-- Firebase -->
-
   <!-- AngularFire -->
   <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
 
@@ -46,6 +45,7 @@
   <script src="controllers/homeController.js"></script>
   <script src="controllers/loadController.js"></script>
   <script src="controllers/navbarController.js"></script>
+  <script src="controllers/recordsController.js"></script>
   <script src="controllers/signInController.js"></script>
   <script src="controllers/wishlistController.js"></script>
 
@@ -59,6 +59,7 @@
   <script src="services/alertService.js"></script>
   <script src="services/authPassService.js"></script>
   <script src="services/firebaseUrlService.js"></script>
+  <script src="services/fbService.js"></script>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="node_modules/angular/angular-csp.css">
@@ -72,7 +73,8 @@
   <![endif]-->
 </head>
     <body ng-controller="loadController">          
-      
+   
+  <script src="//connect.facebook.net/en_US/sdk.js"></script> 
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -91,12 +93,8 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
       
-  <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
-    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
-               aria-label="Show User List">
-      <md-icon md-svg-icon="menu"></md-icon>
-    </md-button>
+  
   </md-toolbar>
     
       <div id="megaNavDiv" style="height:100%;" ng-controller="navbarController">
@@ -110,11 +108,14 @@
               <h1 class="md-toolbar-tools">Nick Muscara</h1>          
             </md-toolbar>
             <ul id="materialLinks" class="nav navbar-nav">
-              <li>
-           
-
+              <li ng-if="!authData">
                 <a ng-click="toggleLeft()" href="#signIn"><span class="sr-only">(current)</span>
                    <img class="sideNavImage" src="icons/accountCircle.svg"> Sign In
+                </a>
+              </li>
+              <li ng-if="authData">
+                <a ng-click="toggleLeft()" href="#signIn"><span class="sr-only">(current)</span>
+                   <img style="border-radius: 50%;" height="48px" width="60px" class="sideNavImage" ng-src='{{authData.photoURL}}'> {{authData.displayName}}
                 </a>
               </li>
               <li>
@@ -132,9 +133,14 @@
                 <img class="sideNavImage" src="icons/contactMe.svg">Contact Me
                 </a>
               </li>
-              <li>
+              <li ng-if="authData.displayName=='Nick Muscara'">
                 <a ng-click="toggleLeft()" href="#wishlist">
                   <img class="sideNavImage" src="icons/wishList.svg">Wish List
+                </a>
+              </li>
+              <li ng-if="authData.displayName=='Nick Muscara' || authData.displayName=='Mike Muscara'">
+                <a ng-click="toggleLeft()" href="#records">
+                  <img class="sideNavImage" src="icons/musicNote.svg">Records
                 </a>
               </li>
               <li>
@@ -150,11 +156,11 @@
               <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md> Open Nav
               </md-button>
             </div>
+
             <div id="mainDiv"> 
                 <div ng-view></div>
             </div>
 
-            
           </md-content>
         </div>
       </div>

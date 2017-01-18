@@ -38,6 +38,10 @@
 				controller: 'signInController'
 
 			})
+			.when('/records', {
+				templateUrl: 'templates/records.html',
+				controller: 'recordsController'
+			})
 			.when('/404', {
 				templateUrl: 'templates/404.html',
 				controller: '404Controller'

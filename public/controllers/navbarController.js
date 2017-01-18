@@ -1,10 +1,19 @@
 
-  nickApp.controller('navbarController', function ($scope, $timeout, $mdSidenav, $log) {
-    $scope.toggleLeft = buildDelayedToggler('left');
-    $scope.toggleRight = buildToggler('right');
-    $scope.isOpenRight = function(){
-      return $mdSidenav('right').isOpen();
-    };
+  nickApp.controller('navbarController', [ '$scope', '$rootScope', '$timeout', '$mdSidenav', '$log', 'authPass',
+    function ($scope, $rootScope, $timeout, $mdSidenav, $log, authPass) {
+    
+      $scope.toggleLeft = buildDelayedToggler('left');
+      $scope.toggleRight = buildToggler('right');
+      
+      $scope.isOpenRight = function(){
+        return $mdSidenav('right').isOpen();
+      };
+
+      $scope.$on('authenticated', function() {
+        $scope.authData = authPass.getAuth();
+        console.log('Success!');
+        console.log($scope.authData);
+      });
 
     /**
      * Supplies a function that will continue to operate until the
@@ -49,7 +58,7 @@
           });
       }
     }
-  })
+  }])
   .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`
@@ -59,4 +68,6 @@
         });
 
     };
-  })
+
+
+  });
