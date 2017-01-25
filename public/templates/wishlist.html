@@ -1,11 +1,11 @@
 <div class='md-padding' layout="row" layout-wrap >
     <md-card style="width: 350px;" ng-repeat="wish in wishlist">
       <md-card-content>
-        <img style="float:right;" ng-src="../images/{{wish.image}}" height="{{wish.height}}" width="{{wish.width}">
+        <img style="float:right;" ng-src="{{wish.image}}" height="{{wish.height}}" width="{{wish.width}">
         <h3>{{wish.name}}</h3>
         <p>{{wish.price}}</p>
         <p>{{wish.size}}</p>
-        <a ng-href="{{wish.link}}">{{wish.linkTitle}}</a>
+        <a target="_blank" ng-href="{{wish.link}}">{{wish.linkTitle}}</a>
       </md-card-content>
     </md-card>
 </div>
