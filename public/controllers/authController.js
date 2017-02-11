@@ -1,7 +1,10 @@
 nickApp.controller('authController', [
-    '$scope', '$rootScope', 'AuthFactory', '$firebaseAuth', 'authPass', '$firebaseArray', '$location', 'alertService', '$timeout', '$mdSidenav', '$log', 
- function($scope, $rootScope, AuthFactory, $firebaseAuth, authPass, $firebaseArray, $location, alertService, $timeout, $mdSidenav, $log) {
-	var ref = new Firebase("https://nickapp-359c9.firebaseio.com/");
+    '$scope', '$rootScope', 'AuthFactory', '$firebaseAuth', 'authPass', 
+    '$firebaseArray', 'alertService', '$timeout', '$mdSidenav', '$log', 
+ function($scope, $rootScope, AuthFactory, $firebaseAuth, authPass, 
+ $firebaseArray, alertService, $timeout, $mdSidenav, $log) {
+	
+var ref = new Firebase('https://nickapp-359c9.firebaseio.com/');
     
  $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
@@ -37,7 +40,7 @@ nickApp.controller('authController', [
         $mdSidenav(navID)
           .toggle()
           .then(function () {
-            $log.debug("toggle " + navID + " is done");
+            $log.debug('toggle ' + navID + 'is done');
           });
       }, 200);
     }
@@ -48,9 +51,9 @@ nickApp.controller('authController', [
         $mdSidenav(navID)
           .toggle()
           .then(function () {
-            $log.debug("toggle " + navID + " is done");
+            $log.debug('toggle ' + navID + ' is done');
           });
-      }
+      };
     }    
  }]);
 
@@ -59,11 +62,11 @@ nickApp.controller('authController', [
       // Component lookup should always be available since we are not using `ng-if`
       $mdSidenav('left').close()
         .then(function () {
-          $log.debug("close LEFT is done");
+          $log.debug('close LEFT is done');
         });
 
     };
-  })
+  });
 
 	
     

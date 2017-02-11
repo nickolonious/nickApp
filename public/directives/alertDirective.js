@@ -4,7 +4,7 @@ nickApp.directive('bootstrapAlert',function(){
         replace: true,
         templateUrl:'../templates/alert.html',
         scope:{
-            options:"="
+            options:'='
         },
         transclude:true,
     };

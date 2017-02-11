@@ -34,7 +34,7 @@ nickApp.service('fbAuth', ['$firebaseAuth', 'authPass', '$rootScope',
         var fbResult = firebase.auth().signOut().then(function() {
             // Sign-out successful.
             this.user = {
-                photoURL: "icons/accountCircle.svg"
+                photoURL: 'icons/accountCircle.svg'
             };
             authPass.setAuth(this.user);
             $rootScope.$broadcast('authenticated');
@@ -66,9 +66,10 @@ nickApp.service('fbAuth', ['$firebaseAuth', 'authPass', '$rootScope',
             var credential = error.credential;
             // ...
             });
-        } else {
+        } 
+        //else {
         // User is already signed-in Firebase with the correct user.
-        }
+        //}
         });
     } else {
      // User is signed-out of Facebook.

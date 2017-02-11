@@ -5,10 +5,10 @@ nickApp.controller('signInController' , ['$scope', 'fbAuth', 'authPass',
     var w1 = $scope.$watch($scope.authData, function(data){
         $scope.authData = data;
     
-        if($scope.authData == null || $scope.authData == undefined)
+        if($scope.authData === null || $scope.authData === undefined)
         {
             $scope.authData = {
-                photoURL: "icons/accountCircle.svg"
+                photoURL: 'icons/accountCircle.svg'
             };
         }
     });
@@ -35,7 +35,7 @@ nickApp.controller('signInController' , ['$scope', 'fbAuth', 'authPass',
     $scope.fbSignOut = function() {
         fbAuth.fbSignOut().then(function() {
             $scope.authData = authPass.getAuth();
-            console.log(authData);
+            console.log($scope.authData);
         }).catch(function(error) {
             $scope.error = error.message;
             console.log($scope.error);

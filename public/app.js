@@ -1,4 +1,8 @@
-	var nickApp = angular.module('nickApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'firebase', 'ui.bootstrap', 'ngMaterial', ])
+(function(){
+	'use strict';
+
+	var nickApp = angular.module('nickApp', 
+	['ngRoute','ngAnimate','ngSanitize','firebase','ui.bootstrap','ngMaterial']);
 
 	// Route Config
 	nickApp.config(function($routeProvider) {
@@ -52,12 +56,13 @@
 	(function() {
 		  // Initialize Firebase
   		var config = {
-    		apiKey: "AIzaSyDE2B3GTOGU_jJFoYKp0Ruc-RmOTheXO6g",
-    		authDomain: "nickapp-359c9.firebaseapp.com",
-    		databaseURL: "https://nickapp-359c9.firebaseio.com",
-    		storageBucket: "nickapp-359c9.appspot.com",
-    		messagingSenderId: "434217548999"
+    		apiKey: 'AIzaSyDE2B3GTOGU_jJFoYKp0Ruc-RmOTheXO6g',
+    		authDomain: 'nickapp-359c9.firebaseapp.com',
+    		databaseURL: 'https://nickapp-359c9.firebaseio.com',
+    		storageBucket: 'nickapp-359c9.appspot.com',
+    		messagingSenderId: '434217548999'
   		};
 		  firebase.initializeApp(config);
 	}());
 
+ })();

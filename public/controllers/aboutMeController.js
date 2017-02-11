@@ -16,7 +16,6 @@ nickApp.controller('aboutMeController', ['$scope', '$firebaseObject', '$firebase
         $scope.skills = datasnap.val();
         $scope.$apply();
     });
-
     projectRef.once('value', function(datasnap){
         $scope.projects = datasnap.val();
         $scope.$apply();
